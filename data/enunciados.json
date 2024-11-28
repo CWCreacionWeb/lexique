@@ -1,0 +1,32 @@
+{
+  "1.1": {
+    "titulo": "Exploración del Dataset de Solicitudes de Efectivo",
+    "descripcion": "Revisión inicial del dataset de solicitudes de efectivo para identificar su estructura, valores nulos y comprender su contenido.",
+    "contenido": "# Exploración de Datos\n\nEn este paso inicial, se cargaron los datos del archivo 'extract - cash request - data analyst.csv'. Se exploraron las columnas, los valores nulos y se revisaron las primeras filas para entender su estructura y contenido.\n\n## Columnas Principales\n- `id`: Identificador único de la solicitud.\n- `amount`: Monto de la solicitud.\n- `status`: Estado de la solicitud (aceptada, rechazada, etc.).\n- `created_at`: Fecha de creación de la solicitud.\n- `updated_at`: Última fecha de actualización.\n\n## Identificación de Valores Nulos\nSe identificaron valores nulos en columnas como `user_id`, `moderated_at`, `deleted_account_id`, entre otras. Este análisis ayuda a planificar los pasos de limpieza y preparación de los datos.\n\n---",
+    "explicacion": "La exploración inicial de datos es fundamental para entender el conjunto de datos, su calidad y las posibles transformaciones necesarias antes del análisis."
+  },
+  "1.2": {
+    "titulo": "Limpieza de Datos",
+    "descripcion": "Eliminación de columnas irrelevantes y tratamiento de valores nulos para asegurar la consistencia de los datos.",
+    "contenido": "# Limpieza de Datos\n\nEn este paso, se eliminaron las columnas con un alto porcentaje de valores nulos y se trataron las columnas relevantes para el análisis.\n\n## Columnas Eliminadas\n- `deleted_account_id`: Más del 90% de valores nulos.\n- `recovery_status`, `reco_creation`, `reco_last_update`: Columnas irrelevantes para los objetivos del análisis.\n\n## Manejo de Nulos\n- Se imputaron valores nulos en `user_id` con el valor 'desconocido' para evitar pérdida de datos.\n- Las fechas en `moderated_at`, `money_back_date` y `cash_request_received_date` se analizaron para determinar si los nulos eran significativos o debían descartarse.\n\n---",
+    "explicacion": "La limpieza de datos asegura que los datos estén listos para el análisis y mejora la calidad de los resultados obtenidos."
+  },
+  "1.3": {
+    "titulo": "Unificación de Datasets",
+    "descripcion": "Combinación de los datasets de solicitudes y tarifas/incidentes para generar un dataset consolidado.",
+    "contenido": "# Unificación de Datasets\n\nLos datos de solicitudes de efectivo se combinaron con los datos de tarifas e incidentes utilizando la columna `cash_request_id` como clave.\n\n## Proceso\n- Se utilizó `pd.merge()` para realizar un cruce entre los datasets.\n- Se verificó que no hubiera valores faltantes críticos después de la unión.\n\n## Resultado\nUn dataset consolidado que incluye información sobre solicitudes, tarifas, y posibles incidentes asociados a cada solicitud.\n\n---",
+    "explicacion": "Unificar los datasets permite realizar análisis más completos y obtener insights valiosos que no serían posibles con datasets separados."
+  },
+  "1.4": {
+    "titulo": "Análisis Exploratorio de Datos",
+    "descripcion": "Análisis inicial de las métricas clave para identificar patrones y tendencias en los datos.",
+    "contenido": "# Análisis Exploratorio de Datos\n\nEn este paso, se calcularon métricas clave y se generaron visualizaciones para entender mejor los datos.\n\n## Métricas Clave\n- Frecuencia de uso: Cantidad de solicitudes realizadas por cada usuario.\n- Tasa de incidentes: Porcentaje de solicitudes con incidentes asociados.\n- Ingresos por cohorte: Total de ingresos generados por cada cohorte de usuarios.\n\n## Visualizaciones\n- Gráficos de líneas para analizar tendencias temporales.\n- Histogramas para distribuciones de montos (`amount`, `total_amount`).\n\n---",
+    "explicacion": "El análisis exploratorio ayuda a identificar patrones y anomalías en los datos, proporcionando una base sólida para el análisis avanzado."
+  },
+  "1.5": {
+    "titulo": "Generación de Insights y Modelos Predictivos",
+    "descripcion": "Obtención de insights clave y desarrollo de modelos para predicción de ingresos y clasificación de usuarios.",
+    "contenido": "# Generación de Insights y Modelos Predictivos\n\nEn este paso, se generaron insights basados en el análisis exploratorio y se desarrollaron modelos para predicción de métricas clave.\n\n## Insights Clave\n- Identificación de cohortes más rentables.\n- Factores asociados a mayores tasas de incidentes.\n\n## Modelos\n- **Regresión:** Para predecir ingresos futuros basados en las características de las solicitudes.\n- **Clasificación:** Para segmentar usuarios según el riesgo de incidentes.\n\n---",
+    "explicacion": "La generación de insights y modelos predictivos permite tomar decisiones basadas en datos y anticipar comportamientos futuros."
+  }
+}
