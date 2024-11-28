@@ -436,7 +436,7 @@ Gráfica guardada como graficas/1.4.6_chart_643.png
 ## Análisis de Usuarios
 
 
-´´´python
+```python
 
 ```
 

@@ -433,15 +433,12 @@ Gráfica guardada como graficas/1.4.6_chart_643.png
 
 ![uoc_logo](graficas/1.4.6_chart_643.png)
 
-## 2. Análisis Temporal
-#### Tendencias Temporales de Solicitudes
+## Análisis de Usuarios
 
-- ¿Cuántas solicitudes se realizan por mes o trimestre?
-- ¿Existen patrones estacionales o cambios con el tiempo?
-- ¿Qué hacer?
 
-- Serie temporal del número de solicitudes por mes (created_at_x).
-- Relaciona tendencias con otros factores como tasas de incidentes.
+```python
+
+```
 
 ---
 ## **4. Resultados Esperados**
